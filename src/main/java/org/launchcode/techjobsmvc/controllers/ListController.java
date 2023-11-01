@@ -28,10 +28,16 @@ public class ListController {
         columnChoices.put("positionType", "Position Type");
         columnChoices.put("coreCompetency", "Skill");
 
+        tableChoices.put("all", new ArrayList<>());
+
         tableChoices.put("employer", JobData.getAllEmployers());
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
         tableChoices.put("coreCompetency", JobData.getAllCoreCompetency());
+
+        ArrayList<String> allValues = new ArrayList<>();
+        allValues.add("all");
+        tableChoices.put("all", allValues);
     }
 
     @GetMapping(value = "")

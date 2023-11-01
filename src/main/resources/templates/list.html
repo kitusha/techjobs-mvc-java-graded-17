@@ -8,20 +8,17 @@
 
 <div class="container body-content">
   <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
-  <h2 class = "centered">View Jobs By Category</h2>
+  <h2 class="centered">View Jobs By Category</h2>
 </div>
 
 <table class="centeredTable">
   <tr>
     <th:block th:each="column : ${columns}">
-      <th th:text = "${column.value}"></th>
+      <th th:text="${column.value}"></th>
     </th:block>
   </tr>
   <tr>
-    <!-- TODO #2: Complete the View Jobs By Category Table. -->
-
-    <td></td> <!-- Feel free to remove or modify this element if necessary. -->
-
+    <td></td>
     <td th:each="category : ${tableChoices}">
       <ul>
         <li th:each="item : ${category.value}">
@@ -29,6 +26,24 @@
         </li>
       </ul>
     </td>
+  </tr>
+</table>
+
+<!-- Complete the View Jobs By Category Table -->
+<table class="job-listing">
+  <tr>
+    <th>ID</th>
+    <th>Employer</th>
+    <th>Location</th>
+    <th>Position Type</th>
+    <th>Core Competency</th>
+  </tr>
+  <tr th:each="job : ${jobs}">
+    <td th:text="${job.id}"></td>
+    <td th:text="${job.employer.name}"></td>
+    <td th:text="${job.location.name}"></td>
+    <td th:text="${job.positionType.name}"></td>
+    <td th:text="${job.coreCompetency.name}"></td>
   </tr>
 </table>
 
