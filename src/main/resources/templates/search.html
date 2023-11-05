@@ -38,11 +38,11 @@
 
   <!-- TODO #4 - Loop over the search results to display all job fields. -->
     <!-- Loop through the list of jobs and display job details -->
-    <div th:each="job : ${jobs}">
-        <div th:replace="~{fragments :: job-details}"></div>
+    <table th:replace="list-jobs :: job-tables"></table>
+
     </div>
 
-</div>
+
 
 </body>
 </html>
